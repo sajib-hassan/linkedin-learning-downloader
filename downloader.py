@@ -1,6 +1,7 @@
 import json
 import logging
 import os
+import sys
 
 from loging_in import login
 from fetch_info import fetch_courses
@@ -40,4 +41,7 @@ def process():
 
 
 if __name__ == "__main__":
+    if sys.version_info[0] != 3:
+        logging.error("This script requires Python 3")
+        exit()
     process()
